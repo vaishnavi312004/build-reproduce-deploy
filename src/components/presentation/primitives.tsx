@@ -42,15 +42,17 @@ export function SlideShell({
   children,
   className,
   dark = true,
+  journey,
 }: {
   children: ReactNode;
   className?: string;
   dark?: boolean;
+  journey?: number;
 }) {
   return (
     <div
       className={cn(
-        "relative h-full w-full overflow-hidden px-[110px] py-[80px]",
+        "relative h-full w-full overflow-hidden px-[110px] pb-[120px] pt-[74px]",
         dark ? "bg-deck text-deck-foreground" : "bg-white text-navy",
         className,
       )}
@@ -59,6 +61,7 @@ export function SlideShell({
       <div className="pointer-events-none absolute -left-[240px] -top-[260px] h-[720px] w-[720px] rounded-full bg-sky/12 blur-[120px]" />
       <div className="pointer-events-none absolute -bottom-[300px] right-[-200px] h-[720px] w-[720px] rounded-full bg-orange/10 blur-[130px]" />
       <div className="relative flex h-full w-full flex-col">{children}</div>
+      {journey === undefined ? null : <JourneyRail active={journey} />}
     </div>
   );
 }
