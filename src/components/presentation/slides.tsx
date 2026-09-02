@@ -516,39 +516,50 @@ function SlideWhyResearch() {
 /* 8 — RESEARCH → WORKING APP                                          */
 /* ------------------------------------------------------------------ */
 function SlideResearchToApp() {
+  const flow = (items: string[], accent = false) => (
+    <div className="mt-5 flex flex-col gap-2">
+      {items.map((s, i) => (
+        <div key={s} className="flex flex-col gap-1">
+          <div
+            className={cn(
+              "slide-body rounded-[14px] border px-6 py-3",
+              accent ? "border-orange/40 bg-deck/50" : "border-deck-line bg-deck-panel",
+            )}
+          >
+            {s}
+          </div>
+          {i < items.length - 1 ? (
+            <span className="slide-chrome text-center leading-none text-orange">↓</span>
+          ) : null}
+        </div>
+      ))}
+    </div>
+  );
+
   return (
     <SlideShell journey={3}>
       <Kicker>Research → application</Kicker>
-      <SlideTitle>FROM A RESEARCH IDEA TO A WORKING APP</SlideTitle>
+      <SlideTitle className="text-[68px]">FROM A RESEARCH IDEA TO A WORKING APP</SlideTitle>
 
-      <div className="mt-12 grid grid-cols-3 gap-8">
+      <div className="mt-8 grid grid-cols-3 gap-8">
         <Reveal delay={300} from="up">
-          <Card className="min-h-[540px]">
+          <Card className="min-h-[520px]">
             <NumberBadge n="01" />
-            <h3 className="slide-subtitle mt-6 font-black">THE CONCEPT</h3>
+            <h3 className="slide-subtitle mt-4 font-black">THE CONCEPT</h3>
             <p className="slide-caption mt-2 font-bold text-sky">Retrieval-Augmented Generation</p>
-            <div className="mt-7 flex flex-col gap-3">
-              {["📄 Your documents", "🔎 Retrieval", "🤖 AI model", "💬 Answer"].map((s, i) => (
-                <div key={s} className="flex flex-col gap-3">
-                  <div className="slide-body rounded-[16px] border border-deck-line bg-deck-panel px-6 py-4">
-                    {s}
-                  </div>
-                  {i < 3 ? <span className="slide-caption text-center text-orange">↓</span> : null}
-                </div>
-              ))}
-            </div>
-            <p className="slide-caption mt-7 text-deck-muted">
-              RAG lets AI answer using your own documents instead of only its training data.
+            {flow(["📄 Your documents", "🔎 Retrieval", "🤖 AI model", "💬 Answer"])}
+            <p className="slide-caption mt-5 text-deck-muted">
+              RAG lets AI answer using your own documents, not only its training data.
             </p>
           </Card>
         </Reveal>
 
         <Reveal delay={700} from="up">
-          <Card className="min-h-[540px]">
+          <Card className="min-h-[520px]">
             <NumberBadge n="02" />
-            <h3 className="slide-subtitle mt-6 font-black">THE PROTOTYPE</h3>
+            <h3 className="slide-subtitle mt-4 font-black">THE PROTOTYPE</h3>
             <p className="slide-caption mt-2 font-bold text-sky">PDF chat application</p>
-            <div className="mt-7 flex flex-col gap-4">
+            <div className="mt-5 flex flex-col gap-4">
               {[
                 "User uploads a PDF",
                 "System processes the document",
@@ -568,21 +579,12 @@ function SlideResearchToApp() {
         </Reveal>
 
         <Reveal delay={1100} from="up">
-          <Card accent className="min-h-[540px]">
+          <Card accent className="min-h-[520px]">
             <NumberBadge n="03" accent />
-            <h3 className="slide-subtitle mt-6 font-black">THE REAL APPLICATION</h3>
+            <h3 className="slide-subtitle mt-4 font-black">THE REAL APPLICATION</h3>
             <p className="slide-caption mt-2 font-bold text-orange">Deploy it</p>
-            <div className="mt-7 flex flex-col gap-3">
-              {["💻 Prototype", "☁️ Cloud", "🤖 AI services", "👥 Real users"].map((s, i) => (
-                <div key={s} className="flex flex-col gap-3">
-                  <div className="slide-body rounded-[16px] border border-orange/40 bg-deck/50 px-6 py-4">
-                    {s}
-                  </div>
-                  {i < 3 ? <span className="slide-caption text-center text-orange">↓</span> : null}
-                </div>
-              ))}
-            </div>
-            <p className="slide-caption mt-7 text-deck-muted">
+            {flow(["💻 Prototype", "☁️ Cloud", "🤖 AI services", "👥 Real users"], true)}
+            <p className="slide-caption mt-5 text-deck-muted">
               Same idea — now something a stranger can open and use.
             </p>
           </Card>
@@ -594,7 +596,6 @@ function SlideResearchToApp() {
   );
 }
 
-/* ------------------------------------------------------------------ */
 /* 9 — CLOUD                                                           */
 /* ------------------------------------------------------------------ */
 const cloudNodes = [
