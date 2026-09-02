@@ -421,8 +421,8 @@ function SlideHumanAI() {
         </div>
       </div>
 
-      <BottomBanner delay={1800} accent={false}>
-        AI may make coding faster, but understanding the problem still requires a human.
+      <BottomBanner delay={1800}>
+        AI MAKES CODING FASTER. UNDERSTANDING THE PROBLEM STILL NEEDS A HUMAN.
       </BottomBanner>
     </SlideShell>
   );
@@ -612,7 +612,7 @@ function SlideCloud() {
       <div className="flex items-end justify-between">
         <div>
           <Kicker>Cloud deployment</Kicker>
-          <SlideTitle>FROM YOUR LAPTOP TO THE WORLD</SlideTitle>
+          <SlideTitle className="max-w-[1120px]">FROM YOUR LAPTOP TO THE WORLD</SlideTitle>
         </div>
         <Reveal delay={200}>
           <span className="slide-badge rounded-full border border-deck-line px-6 py-3 font-bold tracking-[0.16em] text-sky">
@@ -621,7 +621,7 @@ function SlideCloud() {
         </Reveal>
       </div>
 
-      <div className="mt-14 flex items-stretch gap-5">
+      <div className="mt-10 flex items-stretch gap-5">
         {cloudNodes.map((n, i) => (
           <div key={n.label} className="flex flex-1 items-center gap-5">
             <Reveal delay={350 + i * 320} from="scale" className="flex-1">
@@ -643,7 +643,7 @@ function SlideCloud() {
         ))}
       </div>
 
-      <Reveal delay={2000} className="mt-8">
+      <Reveal delay={2000} className="mt-7">
         <div className="mx-auto flex w-[860px] items-center gap-6 rounded-[22px] border border-dashed border-sky/45 px-9 py-6">
           <span className="text-[46px] leading-none">🖥️</span>
           <div>
@@ -655,7 +655,7 @@ function SlideCloud() {
         </div>
       </Reveal>
 
-      <Reveal delay={2200} className="mt-10">
+      <Reveal delay={2200} className="mt-7">
         <div className="flex items-center justify-center gap-8">
           <Chip icon="💻" label="LAPTOP" />
           <Arrow orange />
@@ -665,9 +665,8 @@ function SlideCloud() {
         </div>
       </Reveal>
 
-      <BottomBanner delay={2400} accent={false}>
-        A project running only on your laptop is a prototype. A deployed project becomes something
-        people can actually use.
+      <BottomBanner delay={2400}>
+        LAPTOP = PROTOTYPE · DEPLOYED = SOMETHING PEOPLE CAN ACTUALLY USE
       </BottomBanner>
     </SlideShell>
   );
