@@ -198,13 +198,12 @@ function SlideCompare() {
       <Kicker>Traditional vs AI-assisted</Kicker>
       <SlideTitle>SAME LIFECYCLE. NEW TEAMMATE.</SlideTitle>
       <SlideSub>
-        AI does not remove the software development lifecycle. It changes how efficiently we move
-        through each stage.
+        AI does not remove the lifecycle — it changes how fast we move through each stage.
       </SlideSub>
 
-      <div className="mt-10 flex flex-col gap-5">
+      <div className="mt-8 flex flex-col gap-4">
         {compareRows.map((r, i) => (
-          <div key={r.stage} className="grid grid-cols-[300px_1fr_70px_1fr] items-center gap-6">
+          <div key={r.stage} className="grid grid-cols-[280px_1fr_60px_1fr] items-center gap-5">
             <Reveal delay={300 + i * 300}>
               <div className="flex items-center gap-4">
                 <span className="text-[42px] leading-none">{r.icon}</span>
@@ -212,7 +211,7 @@ function SlideCompare() {
               </div>
             </Reveal>
             <Reveal delay={300 + i * 300} from="left">
-              <div className="rounded-[20px] border border-deck-line bg-deck-panel px-8 py-6">
+              <div className="rounded-[20px] border border-deck-line bg-deck-panel px-7 py-4">
                 <p className="slide-chrome font-bold tracking-[0.18em] text-deck-muted">
                   TRADITIONAL
                 </p>
@@ -221,7 +220,7 @@ function SlideCompare() {
             </Reveal>
             <Arrow delay={480 + i * 300} orange />
             <Reveal delay={560 + i * 300} from="right">
-              <div className="rounded-[20px] border border-sky/45 bg-sky/12 px-8 py-6">
+              <div className="rounded-[20px] border border-sky/45 bg-sky/12 px-7 py-4">
                 <p className="slide-chrome font-bold tracking-[0.18em] text-sky">AI-ASSISTED</p>
                 <p className="slide-body mt-2">{r.ai}</p>
               </div>

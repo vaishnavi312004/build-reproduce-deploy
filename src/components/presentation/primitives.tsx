@@ -88,7 +88,7 @@ export function SlideTitle({
 }) {
   return (
     <Reveal delay={delay}>
-      <h2 className={cn("slide-title mt-6 font-black tracking-tight", className)}>{children}</h2>
+      <h2 className={cn("slide-title mt-5 font-black tracking-tight", className)}>{children}</h2>
     </Reveal>
   );
 }
@@ -96,7 +96,7 @@ export function SlideTitle({
 export function SlideSub({ children, delay = 160 }: { children: ReactNode; delay?: number }) {
   return (
     <Reveal delay={delay}>
-      <p className="slide-body-lg mt-6 max-w-[1400px] text-deck-muted">{children}</p>
+      <p className="slide-body-lg mt-4 max-w-[1700px] text-deck-muted">{children}</p>
     </Reveal>
   );
 }
@@ -191,10 +191,10 @@ export function BottomBanner({
   accent?: boolean;
 }) {
   return (
-    <Reveal delay={delay} className="mt-auto pt-10">
+    <Reveal delay={delay} className="mt-auto pt-7">
       <div
         className={cn(
-          "slide-subtitle rounded-[22px] px-12 py-6 text-center font-black tracking-[0.06em]",
+          "slide-subtitle rounded-[22px] px-12 py-5 text-center font-black tracking-[0.06em]",
           accent ? "bg-orange text-navy" : "border border-deck-line bg-deck-panel text-sky",
         )}
       >
