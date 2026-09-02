@@ -539,7 +539,14 @@ function SlideResearchToApp() {
   return (
     <SlideShell journey={3}>
       <Kicker>Research → application</Kicker>
-      <SlideTitle className="text-[68px]">FROM A RESEARCH IDEA TO A WORKING APP</SlideTitle>
+      <Reveal delay={80}>
+        <h2
+          className="slide-title mt-5 font-black tracking-tight"
+          style={{ fontSize: "62px" }}
+        >
+          FROM A RESEARCH IDEA TO A WORKING APP
+        </h2>
+      </Reveal>
 
       <div className="mt-8 grid grid-cols-3 gap-8">
         <Reveal delay={300} from="up">
@@ -584,9 +591,6 @@ function SlideResearchToApp() {
             <h3 className="slide-subtitle mt-4 font-black">THE REAL APPLICATION</h3>
             <p className="slide-caption mt-2 font-bold text-orange">Deploy it</p>
             {flow(["💻 Prototype", "☁️ Cloud", "🤖 AI services", "👥 Real users"], true)}
-            <p className="slide-caption mt-5 text-deck-muted">
-              Same idea — now something a stranger can open and use.
-            </p>
           </Card>
         </Reveal>
       </div>
