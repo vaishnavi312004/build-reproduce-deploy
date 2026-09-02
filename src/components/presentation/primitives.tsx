@@ -194,7 +194,7 @@ export function BottomBanner({
     <Reveal delay={delay} className="mt-auto pt-7">
       <div
         className={cn(
-          "slide-subtitle rounded-[22px] px-12 py-5 text-center font-black tracking-[0.06em]",
+          "slide-body-lg rounded-[22px] px-12 py-5 text-center font-black tracking-[0.06em]",
           accent ? "bg-orange text-navy" : "border border-deck-line bg-deck-panel text-sky",
         )}
       >

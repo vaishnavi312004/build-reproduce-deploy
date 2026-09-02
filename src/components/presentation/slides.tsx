@@ -198,7 +198,7 @@ function SlideCompare() {
       <Kicker>Traditional vs AI-assisted</Kicker>
       <SlideTitle>SAME LIFECYCLE. NEW TEAMMATE.</SlideTitle>
       <SlideSub>
-        AI does not remove the lifecycle — it changes how fast we move through each stage.
+        AI doesn’t remove the lifecycle — it changes how fast we move through it.
       </SlideSub>
 
       <div className="mt-8 flex flex-col gap-4">
