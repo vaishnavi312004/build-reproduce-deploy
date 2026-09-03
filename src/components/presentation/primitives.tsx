@@ -113,7 +113,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "relative h-full rounded-[28px] border p-10 backdrop-blur-sm",
+        "relative h-full rounded-[28px] border p-9 backdrop-blur-sm",
         accent
           ? "border-orange/55 bg-orange/10"
           : "border-deck-line bg-deck-panel shadow-[0_24px_60px_-30px_rgba(3,12,28,0.9)]",
