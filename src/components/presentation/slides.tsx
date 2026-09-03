@@ -135,7 +135,7 @@ function SlideQuestion() {
       <div className="mt-12 grid grid-cols-4 gap-7">
         {questionCards.map((c, i) => (
           <Reveal key={c.n} delay={420 + i * 260} from="up">
-            <Card accent={i === 3} className="min-h-[330px]">
+            <Card accent={i === 3} className="min-h-[300px]">
               <div className="flex items-center justify-between">
                 <NumberBadge n={c.n} accent={i === 3} />
                 <span className="text-[54px] leading-none">{c.icon}</span>
@@ -353,7 +353,7 @@ function SlideHumanAI() {
 
       <div className="mt-12 grid grid-cols-[1fr_340px_1fr] items-center gap-8">
         <div className="merge-left">
-          <Card className="min-h-[470px]">
+          <Card >
             <span className="text-[62px] leading-none">👨‍💻</span>
             <h3 className="slide-subtitle mt-5 font-black">DEVELOPER / HUMAN</h3>
             <p className="slide-caption mt-6 font-bold tracking-[0.14em] text-sky">UNDERSTANDS</p>
@@ -381,7 +381,7 @@ function SlideHumanAI() {
         </div>
 
         <div className="merge-right">
-          <Card className="min-h-[470px]">
+          <Card >
             <span className="text-[62px] leading-none">🤖</span>
             <h3 className="slide-subtitle mt-5 font-black">AI</h3>
             <p className="slide-caption mt-6 font-bold tracking-[0.14em] text-sky">HELPS</p>
@@ -415,7 +415,7 @@ function SlideWhyResearch() {
 
       <div className="mt-12 grid grid-cols-3 gap-8">
         <Reveal delay={300}>
-          <Card className="min-h-[520px]">
+          <Card>
             <NumberBadge n="01" />
             <h3 className="slide-subtitle mt-6 font-black">REAL SKILL</h3>
             <p className="slide-caption mt-2 font-bold text-sky">Not surface skill</p>
@@ -437,7 +437,7 @@ function SlideWhyResearch() {
         </Reveal>
 
         <Reveal delay={600}>
-          <Card className="min-h-[520px]">
+          <Card>
             <NumberBadge n="02" />
             <h3 className="slide-subtitle mt-6 font-black">STAND OUT</h3>
             <p className="slide-caption mt-2 font-bold text-sky">Differentiate yourself</p>
@@ -457,7 +457,7 @@ function SlideWhyResearch() {
         </Reveal>
 
         <Reveal delay={900}>
-          <Card className="min-h-[520px]">
+          <Card>
             <NumberBadge n="03" />
             <h3 className="slide-subtitle mt-6 font-black">START SMALL</h3>
             <p className="slide-caption mt-2 font-bold text-sky">
@@ -527,7 +527,7 @@ function SlideResearchToApp() {
 
       <div className="mt-8 grid grid-cols-3 gap-8">
         <Reveal delay={300} from="up">
-          <Card className="min-h-[520px]">
+          <Card>
             <NumberBadge n="01" />
             <h3 className="slide-subtitle mt-4 font-black">THE CONCEPT</h3>
             <p className="slide-caption mt-2 font-bold text-sky">Retrieval-Augmented Generation</p>
@@ -539,7 +539,7 @@ function SlideResearchToApp() {
         </Reveal>
 
         <Reveal delay={700} from="up">
-          <Card className="min-h-[520px]">
+          <Card>
             <NumberBadge n="02" />
             <h3 className="slide-subtitle mt-4 font-black">THE PROTOTYPE</h3>
             <p className="slide-caption mt-2 font-bold text-sky">PDF chat application</p>
@@ -563,7 +563,7 @@ function SlideResearchToApp() {
         </Reveal>
 
         <Reveal delay={1100} from="up">
-          <Card accent className="min-h-[520px]">
+          <Card accent>
             <NumberBadge n="03" accent />
             <h3 className="slide-subtitle mt-4 font-black">THE REAL APPLICATION</h3>
             <p className="slide-caption mt-2 font-bold text-orange">Deploy it</p>
@@ -673,7 +673,7 @@ function SlideActivity() {
       <div className="mt-12 grid grid-cols-4 gap-7">
         {activityBoxes.map((b, i) => (
           <Reveal key={b.n} delay={300 + i * 240} from="scale">
-            <Card accent={i % 2 === 1} className="min-h-[340px]">
+            <Card accent={i % 2 === 1} className="min-h-[300px]">
               <div className="flex items-center justify-between">
                 <NumberBadge n={b.n} accent={i % 2 === 1} />
                 <span className="text-[56px] leading-none">{b.icon}</span>
@@ -810,7 +810,7 @@ function SlideRemember() {
       <div className="mt-14 grid grid-cols-3 gap-9">
         {remember.map((r, i) => (
           <Reveal key={r.n} delay={400 + i * 400} from="up">
-            <Card accent={i === 2} className="min-h-[460px]">
+            <Card accent={i === 2}>
               <span className="block text-[130px] font-black leading-none text-orange/70">
                 {r.n}
               </span>
