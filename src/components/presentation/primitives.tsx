@@ -52,7 +52,7 @@ export function SlideShell({
   return (
     <div
       className={cn(
-        "relative h-full w-full overflow-hidden px-[110px] pb-[120px] pt-[74px]",
+        "relative h-full w-full overflow-hidden px-[120px] pb-[168px] pt-[68px]",
         dark ? "bg-deck text-deck-foreground" : "bg-white text-navy",
         className,
       )}
@@ -113,7 +113,7 @@ export function Card({
   return (
     <div
       className={cn(
-        "relative h-full rounded-[28px] border p-10 backdrop-blur-sm",
+        "relative h-full rounded-[28px] border p-9 backdrop-blur-sm",
         accent
           ? "border-orange/55 bg-orange/10"
           : "border-deck-line bg-deck-panel shadow-[0_24px_60px_-30px_rgba(3,12,28,0.9)]",
@@ -207,7 +207,7 @@ export function BottomBanner({
 /** Persistent story-thread indicator shown on every slide. */
 export function JourneyRail({ active }: { active: number }) {
   return (
-    <div className="absolute bottom-[34px] left-[110px] right-[110px] flex items-center gap-4">
+    <div className="absolute bottom-[86px] left-[120px] right-[120px] flex items-center gap-4 opacity-90">
       {JOURNEY.map((s, i) => (
         <div key={s.label} className="flex flex-1 items-center gap-4">
           <div

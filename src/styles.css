@@ -186,13 +186,14 @@
   overflow: hidden;
   position: relative;
 
-  --slide-title-lg: 108px;
-  --slide-title: 84px;
-  --slide-subtitle: 50px;
-  --slide-body-lg: 38px;
-  --slide-body: 30px;
-  --slide-caption: 25px;
-  --slide-kicker: 22px;
+  --slide-title-lg: 96px;
+  --slide-title: 72px;
+  --slide-subtitle: 42px;
+  --slide-body-lg: 33px;
+  --slide-body: 27px;
+  --slide-caption: 23px;
+  --slide-kicker: 20px;
+
   --slide-chrome: 20px;
 }
 
