@@ -759,16 +759,13 @@ function SlideRoadmap() {
         </div>
       </Reveal>
 
-      <Reveal delay={2350} className="mt-8">
+      <Reveal delay={2350} className="mt-auto pt-8">
         <p className="slide-subtitle text-center font-black">
           Don't just build a project and submit it.{" "}
           <span className="text-orange">UNDERSTAND IT. TEST IT. DEPLOY IT. SHOW IT.</span>
         </p>
       </Reveal>
 
-      <BottomBanner delay={2550} accent={false}>
-        That is what turns a college submission into a portfolio project.
-      </BottomBanner>
     </SlideShell>
   );
 }
