@@ -414,7 +414,7 @@ function SlideWhyResearch() {
       <Kicker>Research papers</Kicker>
       <SlideTitle>EVERYONE CAN USE AI. FEW CAN REBUILD WHAT POWERS IT.</SlideTitle>
 
-      <div className="mt-12 grid grid-cols-3 gap-8">
+      <div className="mt-8 grid grid-cols-3 gap-8">
         <Reveal delay={300}>
           <Card>
             <NumberBadge n="01" />
@@ -527,7 +527,7 @@ function SlideResearchToApp() {
         </h2>
       </Reveal>
 
-      <div className="mt-8 grid grid-cols-3 gap-8">
+      <div className="mt-6 grid grid-cols-3 gap-8">
         <Reveal delay={300} from="up">
           <Card>
             <NumberBadge n="01" />
@@ -724,7 +724,7 @@ function SlideRoadmap() {
         </div>
       </Reveal>
 
-      <Reveal delay={520} className="mt-10">
+      <Reveal delay={520} className="mt-8">
         <p className="slide-kicker text-sky">Industry-style approach</p>
       </Reveal>
 
@@ -746,7 +746,7 @@ function SlideRoadmap() {
         ))}
       </div>
 
-      <Reveal delay={2150} className="mt-10">
+      <Reveal delay={2150} className="mt-8">
         <div className="flex flex-wrap justify-center gap-4">
           {["GitHub", "Documentation", "Testing", "Cloud", "AI", "Research"].map((t) => (
             <span
@@ -759,7 +759,7 @@ function SlideRoadmap() {
         </div>
       </Reveal>
 
-      <Reveal delay={2350} className="mt-10">
+      <Reveal delay={2350} className="mt-8">
         <p className="slide-subtitle text-center font-black">
           Don't just build a project and submit it.{" "}
           <span className="text-orange">UNDERSTAND IT. TEST IT. DEPLOY IT. SHOW IT.</span>
