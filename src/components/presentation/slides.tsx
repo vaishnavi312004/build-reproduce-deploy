@@ -412,7 +412,7 @@ function SlideWhyResearch() {
   return (
     <SlideShell journey={2}>
       <Kicker>Research papers</Kicker>
-      <SlideTitle>EVERYONE CAN USE AI. FEW CAN REBUILD WHAT POWERS IT.</SlideTitle>
+      <SlideTitle>EVERYONE CAN USE AI. FEW CAN REBUILD IT.</SlideTitle>
 
       <div className="mt-8 grid grid-cols-3 gap-8">
         <Reveal delay={300}>
