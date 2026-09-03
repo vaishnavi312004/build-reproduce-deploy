@@ -424,11 +424,11 @@ function SlideWhyResearch() {
               Implementing a research paper shows how AI systems actually work.
             </p>
 
-            <div className="mt-8 flex flex-col gap-3">
+            <div className="mt-6 flex flex-col gap-2.5">
               {["📄 Research paper", "🧠 Algorithm", "💻 Code", "✅ Result"].map((s) => (
                 <div
                   key={s}
-                  className="slide-body rounded-[16px] border border-deck-line bg-deck-panel px-6 py-3"
+                  className="slide-body rounded-[16px] border border-deck-line bg-deck-panel px-6 py-2.5"
                 >
                   {s}
                 </div>
@@ -443,7 +443,7 @@ function SlideWhyResearch() {
             <NumberBadge n="02" />
             <h3 className="slide-subtitle mt-6 font-black">STAND OUT</h3>
             <p className="slide-caption mt-2 font-bold text-sky">Differentiate yourself</p>
-            <div className="mt-8 flex flex-col gap-6">
+            <div className="mt-6 flex flex-col gap-5">
               <div className="rounded-[18px] border border-deck-line px-7 py-6 opacity-55">
                 <p className="slide-chrome tracking-[0.16em] text-deck-muted">SOUNDS LIKE</p>
                 <p className="slide-body-lg mt-2 line-through">“I used ChatGPT.”</p>
@@ -468,7 +468,7 @@ function SlideWhyResearch() {
             <p className="slide-body mt-5 text-deck-muted">
               Reproduction is not always easy — so scope it down until it is doable.
             </p>
-            <div className="mt-8 flex flex-col gap-3">
+            <div className="mt-6 flex flex-col gap-2.5">
               {[
                 "1 · Choose one idea",
                 "2 · Build a small prototype",
