@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
-import { CountdownTimer } from "./CountdownTimer";
 import {
   Arrow,
   BottomBanner,
@@ -14,20 +13,12 @@ import {
   SlideTitle,
 } from "./primitives";
 
-export type SpeakerNotes = {
-  talking: string[];
-  interaction: string;
-  example: string;
-  key: string;
-  transition: string;
-};
-
 export type Slide = {
   id: string;
   label: string;
   Component: () => ReactNode;
-  notes: SpeakerNotes;
 };
+
 
 /* ------------------------------------------------------------------ */
 /* 1 — TITLE                                                           */
@@ -299,7 +290,7 @@ function SlideWhereAI() {
 }
 
 /* ------------------------------------------------------------------ */
-/* 5 — 60-SECOND CHALLENGE                                             */
+/* 5 — REAL TIME SCENARIO                                              */
 /* ------------------------------------------------------------------ */
 function SlideChallenge() {
   const examples = [
@@ -310,60 +301,46 @@ function SlideChallenge() {
   ];
   return (
     <SlideShell journey={0}>
-      <Kicker>Interactive challenge</Kicker>
-      <SlideTitle>60-SECOND CHALLENGE</SlideTitle>
+      <Kicker>Think it through</Kicker>
+      <SlideTitle>REAL TIME SCENARIO</SlideTitle>
 
-      <div className="mt-10 grid grid-cols-[1fr_460px] items-start gap-16">
-        <div>
-          <Reveal delay={200}>
-            <div className="rounded-[24px] border border-sky/40 bg-sky/10 px-10 py-8">
-              <p className="slide-kicker text-sky">Scenario</p>
-              <p className="slide-body-lg mt-3 font-semibold">
-                Your college wants an application where students can report campus problems.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="mt-9 grid grid-cols-4 gap-5">
-            {examples.map((e, i) => (
-              <Reveal key={e.label} delay={420 + i * 150} from="scale">
-                <Chip icon={e.icon} label={e.label} />
-              </Reveal>
-            ))}
-          </div>
-
-          <div className="mt-10 flex flex-col gap-5">
-            <Reveal delay={1050} from="left">
-              <div className="flex items-center gap-6 rounded-[22px] border border-deck-line bg-deck-panel px-9 py-7">
-                <NumberBadge n="Q1" />
-                <p className="slide-subtitle font-black">Who are the users?</p>
-              </div>
-            </Reveal>
-            <Reveal delay={1250} from="left">
-              <div className="flex items-center gap-6 rounded-[22px] border border-orange/55 bg-orange/12 px-9 py-7">
-                <NumberBadge n="Q2" accent />
-                <p className="slide-subtitle font-black">
-                  What is ONE important feature this app needs?
-                </p>
-              </div>
-            </Reveal>
-          </div>
-
-          <Reveal delay={1450}>
-            <p className="slide-body mt-8 text-deck-muted">
-              Shout your answers out — no wrong answers, no reveal. This is your design thinking,
-              not a quiz.
-            </p>
-          </Reveal>
+      <Reveal delay={200} className="mt-10">
+        <div className="rounded-[26px] border border-sky/40 bg-sky/10 px-12 py-10">
+          <p className="slide-kicker text-sky">Scenario</p>
+          <p className="slide-subtitle mt-4 font-semibold">
+            Your college wants an application where students can report campus problems.
+          </p>
         </div>
+      </Reveal>
 
-        <Reveal delay={500} from="scale">
-          <CountdownTimer seconds={60} />
+      <div className="mt-10 grid grid-cols-4 gap-8">
+        {examples.map((e, i) => (
+          <Reveal key={e.label} delay={420 + i * 150} from="scale">
+            <Chip icon={e.icon} label={e.label} />
+          </Reveal>
+        ))}
+      </div>
+
+      <div className="mt-12 grid grid-cols-2 gap-10">
+        <Reveal delay={950} from="left">
+          <div className="flex h-full items-center gap-7 rounded-[24px] border border-deck-line bg-deck-panel px-10 py-10">
+            <NumberBadge n="Q1" />
+            <p className="slide-subtitle font-black">Who are the users?</p>
+          </div>
+        </Reveal>
+        <Reveal delay={1150} from="right">
+          <div className="flex h-full items-center gap-7 rounded-[24px] border border-orange/55 bg-orange/12 px-10 py-10">
+            <NumberBadge n="Q2" accent />
+            <p className="slide-subtitle font-black">
+              What is ONE important feature this app needs?
+            </p>
+          </div>
         </Reveal>
       </div>
     </SlideShell>
   );
 }
+
 
 /* ------------------------------------------------------------------ */
 /* 6 — HUMAN + AI                                                      */
@@ -708,7 +685,7 @@ function SlideActivity() {
         ))}
       </div>
 
-      <Reveal delay={1350} className="mt-12">
+      <Reveal delay={1350} className="mt-auto pt-10">
         <div className="flex items-center justify-center gap-7">
           <Chip icon="👥" label="PAIR" />
           <Arrow orange />
@@ -720,7 +697,6 @@ function SlideActivity() {
         </div>
       </Reveal>
 
-      <BottomBanner delay={1550}>SHARE · 2–3 GROUPS EXPLAIN THEIR IDEA</BottomBanner>
     </SlideShell>
   );
 }
@@ -886,17 +862,6 @@ function SlideQuestions() {
           </p>
         </Reveal>
 
-        <Reveal delay={1050} className="mt-16 w-full">
-          <div className="mx-auto grid w-[1240px] grid-cols-2 gap-10 text-left">
-            {["Presenter 1", "Presenter 2"].map((p) => (
-              <div key={p} className="rounded-[22px] border border-deck-line bg-deck-panel px-9 py-7">
-                <p className="slide-kicker text-sky">{p}</p>
-                <p className="slide-body mt-3 text-deck-muted">Name</p>
-                <p className="slide-caption mt-4 text-deck-muted">GitHub · LinkedIn</p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </SlideShell>
   );
@@ -906,212 +871,18 @@ function SlideQuestions() {
 /* Deck                                                                */
 /* ------------------------------------------------------------------ */
 export const slides: Slide[] = [
-  {
-    id: "title",
-    label: "Title",
-    Component: SlideTitleSlide,
-    notes: {
-      talking: [
-        "Open warm and simple: today is not a lecture about tools, it's about a journey.",
-        "Say the six steps out loud as they appear: idea, AI, research, build, cloud, product.",
-        "Introduce both presenters and the 30-minute plan: two short activities included.",
-      ],
-      interaction: "Quick show of hands — who already has a final-year project idea?",
-      example: "Every app on your phone started as somebody's rough idea on paper.",
-      key: "Build · Reproduce · Deploy is the whole session in three words.",
-      transition: "So let's start where every project starts — with a question.",
-    },
-  },
-  {
-    id: "question",
-    label: "The Question",
-    Component: SlideQuestion,
-    notes: {
-      talking: [
-        "Ask the big question and let it hang for a few seconds before revealing cards.",
-        "Walk the four cards: build it, reproduce it, deploy it, your turn.",
-        "Flag early that two slides are activities so they stay awake.",
-      ],
-      interaction: "Ask: what is the first thing you'd do after having an idea?",
-      example: "An app to book the college badminton court — idea is easy, the rest is the work.",
-      key: "An idea only becomes a product by going through a process.",
-      transition: "That process has a name — the software development lifecycle.",
-    },
-  },
-  {
-    id: "compare",
-    label: "Traditional vs AI",
-    Component: SlideCompare,
-    notes: {
-      talking: [
-        "Stress that the stages did not change; only the speed inside each stage changed.",
-        "Read one row at a time, traditional first, then the AI-assisted version.",
-        "Be honest: AI output still needs a human review at every stage.",
-      ],
-      interaction: "Ask which stage they personally find hardest today.",
-      example: "You forgot 'what if the user has no internet?' — AI often surfaces that edge case.",
-      key: "AI is a teammate, not a replacement for understanding.",
-      transition: "Let's see exactly where in the lifecycle that teammate can help.",
-    },
-  },
-  {
-    id: "where-ai",
-    label: "Where AI Helps",
-    Component: SlideWhereAI,
-    notes: {
-      talking: [
-        "Point at the moving AI icon: it rides along the lifecycle, it doesn't replace it.",
-        "Give one concrete assist per stage, keeping each to a sentence.",
-        "Land the warning slowly — it protects them in vivas and in interviews.",
-      ],
-      interaction: "Ask: has AI ever given you code that looked right but didn't work?",
-      example: "Paste a stack trace, ask AI to explain it — then you still fix it yourself.",
-      key: "Same stages, faster movement — never deploy code you can't explain.",
-      transition: "Time to try it yourself. 60 seconds on the clock.",
-    },
-  },
-  {
-    id: "challenge",
-    label: "60-Second Challenge",
-    Component: SlideChallenge,
-    notes: {
-      talking: [
-        "Read the scenario, start the on-screen timer, then stay quiet and let them think.",
-        "Collect shouted answers; write two or three on the board if available.",
-        "Do not give a model answer — the point is that requirements come from people.",
-      ],
-      interaction: "Who are the users? What is ONE important feature?",
-      example: "Students report, staff resolve, admin sees a dashboard — three user types already.",
-      key: "Requirements thinking is human work, and it comes first.",
-      transition: "Notice how much of that came from you, not from AI.",
-    },
-  },
-  {
-    id: "human-ai",
-    label: "Human + AI",
-    Component: SlideHumanAI,
-    notes: {
-      talking: [
-        "Contrast ownership versus assistance — the human signs off on the outcome.",
-        "As the cards merge, say it plainly: AI + human is modern development.",
-        "Mention security and quality remain the developer's responsibility.",
-      ],
-      interaction: "Ask: who is responsible if AI-written code leaks user data?",
-      example: "AI can draft a login form; only you know your college's privacy rules.",
-      key: "AI speeds up coding; understanding the problem stays human.",
-      transition: "But using AI is one thing — understanding how AI works is another.",
-    },
-  },
-  {
-    id: "why-research",
-    label: "Why Research",
-    Component: SlideWhyResearch,
-    notes: {
-      talking: [
-        "Explain a research paper is just an idea plus evidence, written formally.",
-        "Compare the two interview sentences and let the contrast do the work.",
-        "Be realistic: reproduction is sometimes hard, so start with one small piece.",
-      ],
-      interaction: "Ask if anyone has ever opened a research paper — and what stopped them.",
-      example: "Reimplement just the retrieval step of a paper, not the whole system.",
-      key: "Reproducing an idea proves depth that tool usage cannot.",
-      transition: "Let's take one real research idea and turn it into an app.",
-    },
-  },
-  {
-    id: "research-to-app",
-    label: "Research → App",
-    Component: SlideResearchToApp,
-    notes: {
-      talking: [
-        "Explain RAG in one line: give the AI your documents so answers are grounded.",
-        "Walk the PDF-chat prototype flow step by step; it is a weekend-sized project.",
-        "Third card is the jump most students skip: actually deploying it.",
-      ],
-      interaction: "Ask what document they'd want to chat with — syllabus, notes, manuals?",
-      example: "Upload the college exam rulebook and ask 'how many backlogs are allowed?'.",
-      key: "One research concept can become a genuine portfolio project.",
-      transition: "So how do we get it off your laptop? To the cloud.",
-    },
-  },
-  {
-    id: "cloud",
-    label: "Cloud",
-    Component: SlideCloud,
-    notes: {
-      talking: [
-        "Build the architecture one box at a time and name each box's single job.",
-        "Say cloud does not automatically make a project production-ready — you still design it.",
-        "Mention EC2 only as an option when you need a full server.",
-      ],
-      interaction: "Ask: how would a friend in another city use your project right now?",
-      example: "A public URL you can paste in a resume beats a localhost screenshot.",
-      key: "Deployment is what turns a prototype into something usable.",
-      transition: "Now design your own — five minutes, in pairs.",
-    },
-  },
-  {
-    id: "activity",
-    label: "Group Activity",
-    Component: SlideActivity,
-    notes: {
-      talking: [
-        "Keep the energy high; move around the room while pairs work.",
-        "Push them to answer all four boxes, even roughly.",
-        "Pick two or three pairs to present in 30 seconds each.",
-      ],
-      interaction: "Who, where AI helps, what data, how you'd deploy — answer all four.",
-      example: "Attendance app: users students+faculty, AI summarises trends, DB for records, cloud for access.",
-      key: "You can sketch an industry-style plan in five minutes.",
-      transition: "That plan is basically your final-year project roadmap.",
-    },
-  },
-  {
-    id: "roadmap",
-    label: "Roadmap",
-    Component: SlideRoadmap,
-    notes: {
-      talking: [
-        "Cross out the old four-step habit visually and say why it undersells their work.",
-        "Walk the seven-step roadmap and point at the supporting practices around it.",
-        "Emphasise GitHub history and documentation as proof of process.",
-      ],
-      interaction: "Ask which of the seven steps their current project is missing.",
-      example: "Same project, plus tests, plus a live link, plus a README — a different league.",
-      key: "Understand it, test it, deploy it, show it.",
-      transition: "If you remember nothing else, remember these three things.",
-    },
-  },
-  {
-    id: "remember",
-    label: "3 Takeaways",
-    Component: SlideRemember,
-    notes: {
-      talking: [
-        "Slow down — one card, one sentence, one pause.",
-        "Repeat the three-word spine: build, reproduce, deploy.",
-        "Invite them to write these three lines in their notes.",
-      ],
-      interaction: "Ask each student to say which of the three they'll act on this month.",
-      example: "This week: deploy any existing project, even a tiny one.",
-      key: "AI changes how, research builds depth, cloud makes it real.",
-      transition: "That's the session — let's take your questions.",
-    },
-  },
-  {
-    id: "questions",
-    label: "Questions",
-    Component: SlideQuestions,
-    notes: {
-      talking: [
-        "Thank the audience and the department, keep the slide on screen for Q&A.",
-        "Offer to share the deck link, GitHub, and LinkedIn.",
-        "If questions are slow, seed one: 'ask me which project to deploy first'.",
-      ],
-      interaction: "Open floor — invite one question from each row.",
-      example: "Common question: which cloud should a beginner start with, and why.",
-      key: "Go build, reproduce, and deploy something real.",
-      transition: "Close by repeating: build · reproduce · deploy.",
-    },
-  },
+  { id: "title", label: "Title", Component: SlideTitleSlide },
+  { id: "question", label: "The Question", Component: SlideQuestion },
+  { id: "compare", label: "Traditional vs AI", Component: SlideCompare },
+  { id: "where-ai", label: "Where AI Helps", Component: SlideWhereAI },
+  { id: "challenge", label: "Real Time Scenario", Component: SlideChallenge },
+  { id: "human-ai", label: "Human + AI", Component: SlideHumanAI },
+  { id: "why-research", label: "Why Research", Component: SlideWhyResearch },
+  { id: "research-to-app", label: "Research → App", Component: SlideResearchToApp },
+  { id: "cloud", label: "Cloud", Component: SlideCloud },
+  { id: "activity", label: "Group Activity", Component: SlideActivity },
+  { id: "roadmap", label: "Roadmap", Component: SlideRoadmap },
+  { id: "remember", label: "3 Takeaways", Component: SlideRemember },
+  { id: "questions", label: "Questions", Component: SlideQuestions },
 ];
+
