@@ -192,12 +192,12 @@ function SlideCompare() {
         AI doesn’t remove the lifecycle — it changes how fast we move through it.
       </SlideSub>
 
-      <div className="mt-8 flex flex-col gap-4">
+      <div className="mt-9 flex flex-col gap-4">
         {compareRows.map((r, i) => (
           <div key={r.stage} className="grid grid-cols-[280px_1fr_60px_1fr] items-center gap-5">
             <Reveal delay={300 + i * 300}>
               <div className="flex items-center gap-4">
-                <span className="text-[42px] leading-none">{r.icon}</span>
+                <span className="text-[38px] leading-none">{r.icon}</span>
                 <span className="slide-caption font-black tracking-[0.1em]">{r.stage}</span>
               </div>
             </Reveal>
@@ -206,9 +206,10 @@ function SlideCompare() {
                 <p className="slide-chrome font-bold tracking-[0.18em] text-deck-muted">
                   TRADITIONAL
                 </p>
-                <p className="slide-body mt-2">{r.trad}</p>
+                <p className="slide-body mt-1.5">{r.trad}</p>
               </div>
             </Reveal>
+
             <Arrow delay={480 + i * 300} orange />
             <Reveal delay={560 + i * 300} from="right">
               <div className="rounded-[20px] border border-sky/45 bg-sky/12 px-7 py-4">
@@ -624,31 +625,22 @@ function SlideCloud() {
         ))}
       </div>
 
-      <Reveal delay={2000} className="mt-7">
-        <div className="mx-auto flex w-[860px] items-center gap-6 rounded-[22px] border border-dashed border-sky/45 px-9 py-6">
-          <span className="text-[46px] leading-none">🖥️</span>
+      <Reveal delay={2000} className="mt-10">
+        <div className="mx-auto flex w-[900px] items-center gap-6 rounded-[22px] border border-dashed border-sky/45 px-9 py-6">
+          <span className="text-[42px] leading-none">🖥️</span>
           <div>
             <p className="slide-caption font-black">OPTIONAL · AMAZON EC2</p>
-            <p className="slide-body text-deck-muted">
+            <p className="slide-body mt-1 text-deck-muted">
               Can run application servers when you need a full always-on machine.
             </p>
           </div>
         </div>
       </Reveal>
 
-      <Reveal delay={2200} className="mt-7">
-        <div className="flex items-center justify-center gap-8">
-          <Chip icon="💻" label="LAPTOP" />
-          <Arrow orange />
-          <Chip icon="☁️" label="CLOUD" />
-          <Arrow orange />
-          <Chip icon="👥" label="REAL USERS" accent />
-        </div>
-      </Reveal>
-
-      <BottomBanner delay={2400}>
-        LAPTOP = PROTOTYPE · DEPLOYED = SOMETHING PEOPLE CAN ACTUALLY USE
+      <BottomBanner delay={2200}>
+        LAPTOP = PROTOTYPE · DEPLOYED = SOMETHING PEOPLE CAN USE
       </BottomBanner>
+
     </SlideShell>
   );
 }
