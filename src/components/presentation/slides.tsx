@@ -420,20 +420,21 @@ function SlideWhyResearch() {
             <NumberBadge n="01" />
             <h3 className="slide-subtitle mt-6 font-black">REAL SKILL</h3>
             <p className="slide-caption mt-2 font-bold text-sky">Not surface skill</p>
-            <p className="slide-body mt-5 text-deck-muted">
-              Reading and implementing a research paper helps you understand how AI systems
-              actually work.
+            <p className="slide-body mt-4 text-deck-muted">
+              Implementing a research paper shows how AI systems actually work.
             </p>
+
             <div className="mt-8 flex flex-col gap-3">
               {["📄 Research paper", "🧠 Algorithm", "💻 Code", "✅ Result"].map((s) => (
                 <div
                   key={s}
-                  className="slide-body rounded-[16px] border border-deck-line bg-deck-panel px-6 py-4"
+                  className="slide-body rounded-[16px] border border-deck-line bg-deck-panel px-6 py-3"
                 >
                   {s}
                 </div>
               ))}
             </div>
+
           </Card>
         </Reveal>
 
